@@ -1,0 +1,20 @@
+dartdoc:
+  categories:
+    App:
+      markdown: doc/app.md
+      displayName: App
+    Features:
+      markdown: doc/features.md
+      displayName: Features
+    Data Layer:
+      markdown: doc/data.md
+      displayName: Data Layer
+    Model:
+      markdown: doc/model.md
+      displayName: Model
+    Core:
+      markdown: doc/core.md
+      displayName: Core
+
+
+  categoryOrder: ["App", "Features", "Data Layer", "Model"]
