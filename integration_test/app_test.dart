@@ -24,10 +24,16 @@ void main() {
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
 
       await tester.pumpAndSettle(const Duration(seconds: 5));
-
       await binding.takeScreenshot('02-after-url-shortened.png');
+      await tester.enterText(urlTextField, 'https://google.com');
+      await tester.tap(shortenButton);
+
+      await tester.pumpAndSettle(const Duration(seconds: 5));
+
+      await binding.takeScreenshot('03-after-url-shortened2.png');
 
       expect(find.text('https://flutter.dev'), findsOneWidget);
+      expect(find.text('https://google.com'), findsOneWidget);
       expect(find.byType(CircularProgressIndicator), findsNothing);
     });
   });
